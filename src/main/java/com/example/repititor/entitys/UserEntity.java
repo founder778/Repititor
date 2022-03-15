@@ -1,5 +1,6 @@
 package com.example.repititor.entitys;
 
+import com.example.repititor.enums.UserStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,11 +13,11 @@ import javax.persistence.*;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer u_id;
-    private String u_name;
-    private String u_surname;
-    private String u_phone;
-    private String u_email;
-    private String u_parol;
-    private String u_login;
+    private Integer id;
+    private String name;
+    private String surname;
+    private String phone;
+    private String email;
+    private String parol;
+    private UserStatus status;
 }
