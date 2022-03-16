@@ -1,4 +1,5 @@
 package com.example.repititor.utils;
+import com.example.repititor.exeptions.BadRequestExeption;
 import io.jsonwebtoken.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +14,7 @@ public class JwtUtil {
         jwtBuilder.setIssuedAt(new Date());
         jwtBuilder.signWith(SignatureAlgorithm.HS256, secretKey);
         jwtBuilder.setExpiration(new Date(System.currentTimeMillis() + (60 * 60 * 1000)));
-        jwtBuilder.setIssuer("kun.uz");
+        jwtBuilder.setIssuer("Repititor.uz");
         String jwt = jwtBuilder.compact();
         return jwt;
     }
@@ -81,14 +82,14 @@ public class JwtUtil {
 //        return dto;
 //    }
 //
-//    public static ProfileJwtDTO getProfile(HttpServletRequest request) {
-//
-//        ProfileJwtDTO dto = (ProfileJwtDTO) request.getAttribute("jwtDTO");
-//
-//        if (dto == null) {
-//            throw new UnauthorizaedException("Not Authorized");
-//        }
-//
-//        return dto;
-//    }
+    public static Integer getUser(HttpServletRequest request) {
+
+        Integer dto = (Integer) request.getAttribute("jwtDTO");
+
+        if (dto == null) {
+            throw new BadRequestExeption("Not Authorized");
+        }
+
+        return dto;
+    }
 }

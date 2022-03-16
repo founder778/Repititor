@@ -11,16 +11,12 @@ import java.time.LocalDate;
 @Setter
 @Entity
 @Table(name = "announcment")
-public class PostEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer a_id;
+public class PostEntity extends BaseEntity {
     private String a_title;
     private String a_content;
     private String a_price;
     private String a_type;
     private String a_img;
-    private LocalDate date;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity user;

@@ -10,14 +10,13 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "users")
-public class UserEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class UserEntity extends BaseEntity {
+
     private String name;
     private String surname;
     private String phone;
     private String email;
     private String parol;
+    @Enumerated(EnumType.STRING)
     private UserStatus status;
 }

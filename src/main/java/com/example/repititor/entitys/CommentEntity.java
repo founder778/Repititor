@@ -10,10 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name = "comment")
-public class CommentEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer c_id;
+public class CommentEntity extends BaseEntity {
     private String c_content;
 
 
@@ -26,6 +23,5 @@ public class CommentEntity {
     @JoinColumn(name = "post_id")
     private PostEntity post;
 
-    private LocalDateTime dateTime;
 
 }

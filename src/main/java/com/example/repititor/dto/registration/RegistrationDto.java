@@ -21,8 +21,5 @@ public class RegistrationDto {
     private String phone;
     @NotNull
     @NotEmpty(message = "Bu maydon to`ldrilishi shart")
-    private String login;
-    @NotNull
-    @NotEmpty(message = "Bu maydon to`ldrilishi shart")
     private String password;
 }
